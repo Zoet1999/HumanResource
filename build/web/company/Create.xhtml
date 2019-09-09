@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCompanyTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCompanyLabel_companyNo}" for="companyNo" />
+                    <h:inputText id="companyNo" value="#{companyController.selected.companyNo}" title="#{bundle.CreateCompanyTitle_companyNo}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_companyNo}"/>
+                    <h:outputLabel value="#{bundle.CreateCompanyLabel_companyName}" for="companyName" />
+                    <h:inputText id="companyName" value="#{companyController.selected.companyName}" title="#{bundle.CreateCompanyTitle_companyName}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_companyName}"/>
+                    <h:outputLabel value="#{bundle.CreateCompanyLabel_address}" for="address" />
+                    <h:inputText id="address" value="#{companyController.selected.address}" title="#{bundle.CreateCompanyTitle_address}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_address}"/>
+                    <h:outputLabel value="#{bundle.CreateCompanyLabel_remark}" for="remark" />
+                    <h:inputText id="remark" value="#{companyController.selected.remark}" title="#{bundle.CreateCompanyTitle_remark}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{companyController.create}" value="#{bundle.CreateCompanySaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{companyController.prepareList}" value="#{bundle.CreateCompanyShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCompanyIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

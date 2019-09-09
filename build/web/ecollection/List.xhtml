@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEcollectionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListEcollectionEmpty}" rendered="#{ecollectionController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{ecollectionController.items.rowCount > 0}">
+                    <h:outputText value="#{ecollectionController.pagination.pageFirstItem + 1}..#{ecollectionController.pagination.pageLastItem + 1}/#{ecollectionController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{ecollectionController.previous}" value="#{bundle.Previous} #{ecollectionController.pagination.pageSize}" rendered="#{ecollectionController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{ecollectionController.next}" value="#{bundle.Next} #{ecollectionController.pagination.pageSize}" rendered="#{ecollectionController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{ecollectionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEcollectionTitle_collectNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.collectNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEcollectionTitle_accountNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accountNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEcollectionTitle_staffNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.staffNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEcollectionTitle_staffstaffNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.staffstaffNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEcollectionTitle_accountaccountNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accountaccountNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{ecollectionController.prepareView}" value="#{bundle.ListEcollectionViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{ecollectionController.prepareEdit}" value="#{bundle.ListEcollectionEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{ecollectionController.destroy}" value="#{bundle.ListEcollectionDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{ecollectionController.prepareCreate}" value="#{bundle.ListEcollectionCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListEcollectionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

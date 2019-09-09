@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEcollectionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEcollectionLabel_collectNo}" for="collectNo" />
+                    <h:inputText id="collectNo" value="#{ecollectionController.selected.collectNo}" title="#{bundle.CreateEcollectionTitle_collectNo}" required="true" requiredMessage="#{bundle.CreateEcollectionRequiredMessage_collectNo}"/>
+                    <h:outputLabel value="#{bundle.CreateEcollectionLabel_accountNo}" for="accountNo" />
+                    <h:inputText id="accountNo" value="#{ecollectionController.selected.accountNo}" title="#{bundle.CreateEcollectionTitle_accountNo}" required="true" requiredMessage="#{bundle.CreateEcollectionRequiredMessage_accountNo}"/>
+                    <h:outputLabel value="#{bundle.CreateEcollectionLabel_staffNo}" for="staffNo" />
+                    <h:inputText id="staffNo" value="#{ecollectionController.selected.staffNo}" title="#{bundle.CreateEcollectionTitle_staffNo}" />
+                    <h:outputLabel value="#{bundle.CreateEcollectionLabel_staffstaffNo}" for="staffstaffNo" />
+                    <h:selectOneMenu id="staffstaffNo" value="#{ecollectionController.selected.staffstaffNo}" title="#{bundle.CreateEcollectionTitle_staffstaffNo}" required="true" requiredMessage="#{bundle.CreateEcollectionRequiredMessage_staffstaffNo}">
+                        <f:selectItems value="#{staffController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateEcollectionLabel_accountaccountNo}" for="accountaccountNo" />
+                    <h:selectOneMenu id="accountaccountNo" value="#{ecollectionController.selected.accountaccountNo}" title="#{bundle.CreateEcollectionTitle_accountaccountNo}" required="true" requiredMessage="#{bundle.CreateEcollectionRequiredMessage_accountaccountNo}">
+                        <f:selectItems value="#{accountController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ecollectionController.create}" value="#{bundle.CreateEcollectionSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{ecollectionController.prepareList}" value="#{bundle.CreateEcollectionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEcollectionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

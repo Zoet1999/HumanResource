@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="en"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Register</title>
+
+        <!-- ========== Css Files ========== -->
+        <link href="css/root.css" rel="stylesheet"/>
+<link href="css/style_1.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <div style="position:absolute;z-index:-1;width:100%;height:100%;">
+            <img src="img/manageloginbg.png" width="100%" height="100%" />
+        </div>
+
+        <div class="login-form">
+            <h:form>
+                <div class="top">                    
+                    <h1>Register</h1>
+                    <h4>Join to our community now!</h4>
+                </div>
+                <div class="form-area">
+
+                    <div class="group">
+                        <h:inputText id="userName"
+                                     class="form-control"
+                                     title="请输入你的用户名"
+                                     value="#{accountController.selected.name}"
+                                     required="true"
+                                     requiredMessage="用户名必填"
+                                     maxlength="30"
+                                     a:placeholder="请输入用户名" 
+                                     >
+                        </h:inputText>
+
+                        <i class="fa fa-user"></i>
+                    </div>
+
+                    <div class="group">
+                        <h:inputText id="userTel"
+                                     class="form-control"
+                                     title="请输入你的手机号"
+                                     value="#{accountController.selected.telNo}"
+                                     required="true"
+                                     requiredMessage="手机号必填"
+                                     maxlength="30"
+                                     a:placeholder="请输入常用手机号" 
+                                     >
+                        </h:inputText>
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="group">                       
+                        <h:inputSecret id="password"
+                                       class="form-control"
+                                       title="请输入你的密码"
+                                       value="#{accountController.selected.pwd}"
+                                       required="true"
+                                       requiredMessage="密码必填"                                     
+                                       maxlength="20"
+                                       a:placeholder="请输入密码"
+                                       >
+                        </h:inputSecret>                    
+                        <i class="fa fa-key"></i>
+                    </div>
+                    <div class="group">                       
+                        <h:inputSecret id="passwordConfirm"
+                                       class="form-control"
+                                       title="请输入你的密码"
+                                       value="#{accountController.passwordConfirm}"
+                                       required="true"
+                                       requiredMessage="密码必填"
+
+                                       maxlength="20"
+                                       a:placeholder="请再次输入密码"
+                                       >
+
+                        </h:inputSecret>
+                      
+                        <i class="fa fa-key"></i>
+                    </div>
+                    <div class="checkbox checkbox-primary">
+                        <input id="checkbox101" type="checkbox" required="true" />
+                        <label for="checkbox101"> 同意本公司</label>
+                        <p:link outcome="error" value="《用户协议》" style="margin-right:20px;">                            
+                        </p:link>                        
+                    </div>  
+
+                    <div>                       
+                        <p:growl id="growl" life="2000" />
+                        <h:commandButton id="register"
+                                         value="立即注册" 
+                                         style="margin-right:20px;" 
+                                         styleClass="btn btn-default btn-block"                                       
+                                         action="#{accountController.isRegister}">
+
+                            <!--                        <f:param name="myname" value="1" />-->
+                        </h:commandButton>
+
+                    </div>
+
+                </div>
+            </h:form>           
+        </div>
+
+    </h:body>
+</html>

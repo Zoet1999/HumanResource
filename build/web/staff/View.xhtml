@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewStaffTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewStaffLabel_staffNo}"/>
+                    <h:outputText value="#{staffController.selected.staffNo}" title="#{bundle.ViewStaffTitle_staffNo}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_name}"/>
+                    <h:outputText value="#{staffController.selected.name}" title="#{bundle.ViewStaffTitle_name}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_sex}"/>
+                    <h:outputText value="#{staffController.selected.sex}" title="#{bundle.ViewStaffTitle_sex}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_age}"/>
+                    <h:outputText value="#{staffController.selected.age}" title="#{bundle.ViewStaffTitle_age}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_address}"/>
+                    <h:outputText value="#{staffController.selected.address}" title="#{bundle.ViewStaffTitle_address}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_tel}"/>
+                    <h:outputText value="#{staffController.selected.tel}" title="#{bundle.ViewStaffTitle_tel}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_mail}"/>
+                    <h:outputText value="#{staffController.selected.mail}" title="#{bundle.ViewStaffTitle_mail}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_workingYears}"/>
+                    <h:outputText value="#{staffController.selected.workingYears}" title="#{bundle.ViewStaffTitle_workingYears}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{staffController.destroyAndView}" value="#{bundle.ViewStaffDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewStaffEditLink}"/>
+                <br />
+                <h:commandLink action="#{staffController.prepareCreate}" value="#{bundle.ViewStaffCreateLink}" />
+                <br />
+                <h:commandLink action="#{staffController.prepareList}" value="#{bundle.ViewStaffShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewStaffIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

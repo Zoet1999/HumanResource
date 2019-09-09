@@ -1,0 +1,601 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+
+
+    <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+    <!--[if !IE]><!-->
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8"/>
+        <title>About Me</title>
+        <meta name="description" content="iDea a Bootstrap-based, Responsive HTML5 Template"/>
+        <meta name="author" content="htmlcoder.me"/>
+
+        <!-- Mobile Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script language="javascript" type="text/javascript" src="datepicker/WdatePicker.js"></script>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico"/>
+
+        <!-- Web Fonts -->
+
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
+
+        <!-- Font Awesome CSS -->
+        <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+
+        <!-- Fontello CSS -->
+        <link href="fonts/fontello/css/fontello.css" rel="stylesheet"/>
+
+        <!-- Plugins -->
+        <link href="plugins/magnific-popup/magnific-popup.css" rel="stylesheet"/>
+        <link href="css/animations.css" rel="stylesheet"/>
+        <link href="plugins/owl-carousel/owl.carousel.css" rel="stylesheet"/>
+
+        <!-- iDea core CSS file -->
+        <link href="css/style.css" rel="stylesheet"/>
+
+        <!-- Color Scheme (In order to change the color scheme, replace the red.css with the color scheme that you prefer)-->
+        <link href="css/skins/red.css" rel="stylesheet"/>
+
+        <!-- Custom css --> 
+        <link href="css/custom.css" rel="stylesheet"/>
+    </h:head>
+
+    <!-- body classes: 
+                    "boxed": boxed layout mode e.g. <body class="boxed">
+                    "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+    -->
+    <h:body>
+        <!-- 上框start    -->
+
+        <div class="row">
+            <div class="col-md-3"> 
+
+                <!-- header-left start --> 
+                <!-- ================ -->
+                <div class="header-left clearfix"> 
+
+                    <!-- logo -->
+                    <div class="logo"> <a href="index.html"><img id="logo" src="images/logo_red.png" alt="WE"/></a> </div>
+
+                    <!-- name-and-slogan -->
+                    <div class="site-slogan"> Better,Faster,safe </div>
+                </div>
+                <!-- header-left end --> 
+
+            </div>
+            <div class="col-md-9"> 
+
+                <div class="header-right clearfix"> 
+
+                    <!-- main-navigation start --> 
+                    <!-- ================ -->
+                    <div class="main-navigation animated"> 
+
+                        <!-- navbar start --> 
+                        <!-- ================ -->
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid"> 
+
+                                <!-- Toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="#"><h:link outcome="homepage" class="icon-right-open">主页</h:link>
+                                        </li>
+                                        <!-- mega-menu start -->
+                                        <li class="dropdown mega-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">搜索</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-3 hidden-sm">
+                                                            <h4>搜索方式</h4>
+                                                            <p></p></div>
+                                                        <div class="col-lg-8 col-md-9">
+                                                            <h4>Pages</h4>
+                                                            <div class="row">
+                                                                <div class="col-sm-4">
+                                                                    <div class="divider"></div>
+                                                                    <ul class="menu">
+                                                                          <li><h:link outcome="SrStaff" class="icon-right-open">搜索员工</h:link></li>   
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <div class="divider"></div>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <div class="divider"></div>
+                                                                    <ul class="menu">
+                                                                     <li><h:link outcome="SrCompany" class="icon-right-open">搜索公司</h:link></li>  
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- mega-menu end -->
+                                        <li class="dropdown"> </li>
+                                        <li class="dropdown"> <a href="NULL" class="dropdown-toggle" data-toggle="dropdown">网站使用教程</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="shop-listing-3col.html">暂无</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"> <a href="Null" class="dropdown-toggle" data-toggle="dropdown">账号管理</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="blog-right-sidebar.html">暂无</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- navbar end --> 
+
+                    </div>
+                    <!-- main-navigation end --> 
+
+                </div>
+            </div>
+        </div>
+        <!-- 上框end      -->   
+
+
+        <div>  
+
+            <div class="page-intro">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ol class="breadcrumb">
+                                <li><i class="fa fa-home pr-10"></i><h:link outcome="adindex" value="Home" class="page-header"/></li>
+                                <li class="active">Contact</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- scrollToTop -->
+            <!-- ================ -->
+            <div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+            <!-- page wrapper start -->
+            <!-- ================ -->
+
+            <h:form>
+                <div class="page-wrapper">
+
+                    <!-- header-top start -->
+                    <!-- ================ -->			<!-- header-top end -->
+
+                    <!-- header start (remove fixed class from header in order to disable fixed navigation mode) -->
+                    <!-- ================ -->			<!-- header end -->
+
+                    <!-- page-intro start-->
+                    <!-- ================ -->			<!-- page-intro end -->
+
+                    <!-- main-container start -->
+                    <!-- ================ -->
+                    <section class="main-container">
+
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- main start -->
+                                <!-- ================ -->
+                                <div class="main col-md-12">
+
+                                    <!-- page-title start -->
+                                    <!-- ================ -->
+                                    <h1 class="page-title">创建简历</h1>
+                                    <div class="separator-2"></div>
+                                    <div class="space"></div>
+                                    <!-- page-title end -->
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-3">
+                                            <div class="box-style-1 gray-bg team-member">
+                                                <div class="overlay-container">
+                                                    <img src="images/team-member-2.jpg" alt=""/>
+                                                    <div class="overlay">
+                                                        <ul class="social-links colored clearfix">
+                                                            <li class="qq"><a target="_blank" href="#"><i class="fa fa-qq"></i></a></li>
+                                                            <li class="weixin"><a target="_blank" href="#"><i class="fa fa-weixin"></i></a></li>
+                                                            <li class="weibo"><a target="_blank" href="#"><i class="fa fa-weibo"></i></a></li>
+                                                            <li class="github"><a target="_blank" href="#"><i class="fa fa-github"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-5 col-sm-8">
+                                            <ul class="list-icons"/>
+
+
+                                            <li><i class="icon-check"></i> 姓名</li>
+                                            <h:inputText id="name" value="#{resumeController.sselected.name}" title="#{bundle.CreateStaffTitle_name}" required="true" requiredMessage="#{bundle.CreateStaffRequiredMessage_name}"/>										
+                                            <li><i class="icon-check"></i> 性别</li>
+                                            <h:inputText id="sex" value="#{resumeController.sselected.sex}" title="#{bundle.CreateStaffTitle_sex}" required="true" requiredMessage="#{bundle.CreateStaffRequiredMessage_sex}"/>
+                                            <li><i class="icon-check"></i> 年龄</li>
+                                            <h:inputText id="age" value="#{resumeController.sselected.age}" title="#{bundle.CreateStaffTitle_age}" required="true" requiredMessage="#{bundle.CreateStaffRequiredMessage_age}"/>
+                                            <li><i class="icon-check"></i> 地址</li>                                                                                
+                                            <h:inputText id="address" value="${resumeController.sselected.address}" title="#{bundle.CreateStaffTitle_address}" required="true" requiredMessage="#{bundle.CreateStaffRequiredMessage_address}"/>
+                                            <li><i class="icon-check"></i> 电话</li>  
+                                            <h:inputText id="tel" value="#{resumeController.sselected.tel}" title="#{bundle.CreateStaffTitle_tel}" />
+                                            <li><i class="icon-check"></i> 邮箱</li> 
+                                            <h:inputText id="mail" value="#{resumeController.sselected.mail}" title="#{bundle.CreateStaffTitle_mail}" />
+                                            <li><i class="icon-check"></i> 工龄</li> 
+                                            <h:inputText id="workingYears" value="#{resumeController.sselected.workingYears}" title="#{bundle.CreateStaffTitle_workingYears}" />
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- main end -->
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- main-container end -->
+
+                    <!-- section start -->
+                    <!-- ================ -->
+                    <div class="text-center">
+                        <h2>工作经历</h2>
+                    </div>
+                    <div class="text-center">
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        经历1
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <h:outputLabel value="CompanyName:" for="companyName" />
+                                    <h:inputText id="companyName1" value="#{resumeController.c1selected.companyName}" title="#{bundle.CreateCompanyTitle_companyName}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_companyName}"/>
+
+
+                                    <h:outputLabel value="Department:" for="department" />
+                                    <h:inputText id="department1" value="#{resumeController.p1selected.department}" title="#{bundle.CreatePositionTitle_department}" />
+
+                                    <h:outputLabel value="Position:" for="position" />
+                                    <h:inputText id="position1" value="#{resumeController.p1selected.position}" title="#{bundle.CreatePositionTitle_position}" />
+
+                                    <h:outputLabel value="IniDate:" for="iniDate" />
+                                    <h:inputText id="iniDate1" value="#{resumeController.e1selected.iniDate}" title="#{bundle.CreateExperienceTitle_iniDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                    <h:outputLabel value="DepDate:" for="depDate" />
+                                       <h:inputText id="depDate1" value="#{resumeController.e1selected.depDate}" title="#{bundle.CreateExperienceTitle_depDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+                                        经历2
+
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h:outputLabel value="CompanyName2:" for="companyName" />
+                                    <h:inputText id="companyName2" value="#{resumeController.c2selected.companyName}" title="#{bundle.CreateCompanyTitle_companyName}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_companyName}" />
+
+                                    <h:outputLabel value="Department2:" for="department" />
+                                    <h:inputText id="department2" value="#{resumeController.p2selected.department}" title="#{bundle.CreatePositionTitle_department}" />
+
+                                    <h:outputLabel value="Position2:" for="position" />
+                                    <h:inputText id="position2" value="#{resumeController.p2selected.position}" title="#{bundle.CreatePositionTitle_position}" />
+
+                                    <h:outputLabel value="IniDate2:" for="iniDate" />
+                                    <h:inputText id="iniDate2" value="#{resumeController.e2selected.iniDate}" title="#{bundle.CreateExperienceTitle_iniDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                    
+
+                                    <h:outputLabel value="DepDate2:" for="depDate" /><!--
+-->                                    <h:inputText id="depDate2" value="#{resumeController.e2selected.depDate}" title="#{bundle.CreateExperienceTitle_depDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
+                                        经历3
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h:outputLabel value="CompanyName3:" for="companyName" />
+                                    <h:inputText id="companyName3" value="#{resumeController.c3selected.companyName}" title="#{bundle.CreateCompanyTitle_companyName}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_companyName}" />
+
+                                    <h:outputLabel value="Department3:" for="department" />
+                                    <h:inputText id="department3" value="#{resumeController.p3selected.department}" title="#{bundle.CreatePositionTitle_department}"/>
+
+                                    <h:outputLabel value="Position3:" for="position" />
+                                    <h:inputText id="position3" value="#{resumeController.p3selected.position}" title="#{bundle.CreatePositionTitle_position}" />
+
+                                    <h:outputLabel value="IniDate3:" for="iniDate" />
+                                    <h:inputText id="iniDate3" value="#{resumeController.e3selected.iniDate}" title="#{bundle.CreateExperienceTitle_iniDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                    
+                                    
+
+                                    <h:outputLabel value="DepDate3:" for="depDate" />
+                                    <h:inputText id="depDate3" value="#{resumeController.e3selected.depDate}" title="#{bundle.CreateExperienceTitle_depDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFourth" class="collapsed">
+                                        经历4
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFourth" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h:outputLabel value="CompanyName4:" for="companyName" />
+                                    <h:inputText id="companyName4" value="#{resumeController.c4selected.companyName}" title="#{bundle.CreateCompanyTitle_companyName}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_companyName}" />
+
+                                    <h:outputLabel value="Department4:" for="department" />
+                                    <h:inputText id="department4" value="#{resumeController.p4selected.department}" title="#{bundle.CreatePositionTitle_department}" />
+
+                                    <h:outputLabel value="Position4:" for="position" />
+                                    <h:inputText id="position4" value="#{resumeController.p4selected.position}" title="#{bundle.CreatePositionTitle_position}" />
+
+                                    <h:outputLabel value="IniDate4:" for="iniDate" />
+                                    <h:inputText id="iniDate4" value="#{resumeController.e4selected.iniDate}" title="#{bundle.CreateExperienceTitle_iniDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                    
+                                    
+
+                                    <h:outputLabel value="DepDate4:" for="depDate" />
+                                    <h:inputText id="depDate4" value="#{resumeController.e4selected.depDate}" title="#{bundle.CreateExperienceTitle_depDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFifth" class="collapsed">
+                                        经历5
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFifth" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h:outputLabel value="CompanyName5:" for="companyName" />
+                                    <h:inputText id="companyName5" value="#{resumeController.c5selected.companyName}" title="#{bundle.CreateCompanyTitle_companyName}" required="true" requiredMessage="#{bundle.CreateCompanyRequiredMessage_companyName}" />
+
+                                    <h:outputLabel value="Department5:" for="department" />
+                                    <h:inputText id="department5" value="#{resumeController.p5selected.department}" title="#{bundle.CreatePositionTitle_department}" />
+
+                                    <h:outputLabel value="Position5:" for="position" />
+                                    <h:inputText id="position5" value="#{resumeController.p5selected.position}" title="#{bundle.CreatePositionTitle_position}" />
+
+                                    <h:outputLabel value="IniDate5:" for="iniDate" />
+                                    <h:inputText id="iniDate5" value="#{resumeController.e5selected.iniDate}" title="#{bundle.CreateExperienceTitle_iniDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>
+                                    
+                                    
+
+                                    <h:outputLabel value="DepDate5:" for="depDate" />
+                                    <h:inputText id="depDate5" value="#{resumeController.e5selected.depDate}" title="#{bundle.CreateExperienceTitle_depDate}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:inputText>                                   
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>			
+                    <!-- section end -->
+
+                    <!-- footer start (Add "light" class to #footer in order to enable light footer) -->
+                    <!-- ================ -->
+
+                    <!-- footer end -->
+
+                </div>
+                <h:commandLink action="#{resumeController.create}" value="#{bundle.CreateStaffSaveLink}"  />
+            </h:form>
+        </div>
+        <!-- page-wrapper end -->
+        <div class="container">
+            <div class="row"> </div>
+
+            <!-- section end --> 
+
+            <!-- section start --> 
+            <!-- ================ -->  <!-- section end --> 
+
+            <!-- footer start (Add "light" class to #footer in order to enable light footer) --> 
+            <!-- ================ -->
+            <footer id="footer"> 
+
+                <!-- .footer start --> 
+                <!-- ================ -->
+
+                <section class="footer">
+                    <h2 class="text-center">感谢您的浏览与支持</h2>
+                    <hr>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 footer-left">
+                                    <h4>联系我们</h4>
+                                    <div class="contact-info">
+                                        <div class="address"> <i class="glyphicon glyphicon-globe"></i>
+                                            <p class="p3">Xi TuCheng Rd.</p>
+                                            <p class="p4">Beijing</p>
+                                        </div>
+                                        <div class="phone"> <i class="glyphicon glyphicon-phone-alt"></i>
+                                            <p class="p3">+13121596097</p>
+                                        </div>
+                                        <div class="email-info"> <i class="glyphicon glyphicon-envelope"></i>
+                                            <p class="p3"><a href="mailto:email1@example.com">1947367580@qq.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="col-md-4 footer-right col-lg-5 col-lg-offset-2">
+                                    <h4>支持</h4>
+                                    <p> </p>
+                                    <p> </p>
+                                    <p> </p>
+                                    <p>您可以通过以下方式联系我们或者获得更多信息 </p>
+                                    <p>请点击 </p>
+                                    <p> </p>
+                                    <p> </p>
+                                    <p> </p>
+                                    <p> </p>
+                                    <p> </p>
+                                    <!--             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1947367580&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1947367580:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> -->
+                                </div>
+                                <!-- col -->
+                            </div>
+                            <!-- row -->
+                        </div>
+                        <!-- container -->
+                    </hr>
+                </section>
+                <!-- .footer end --> 
+
+                <!-- .subfooter start --> 
+                <!-- ================ -->    <!-- .subfooter end --> 
+
+            </footer>
+            <!-- footer end --> 
+
+        </div>
+        <!--下栏 start --> 
+
+
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Copyright &copy; 2015.Company name All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <nav class="navbar navbar-default" role="navigation">
+                            Toggle get grouped for better mobile display 
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-2">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>   
+                            <div class="collapse navbar-collapse" id="navbar-collapse-2">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="index.xhtml">Home</a></li>
+                                    <li><a href="page-about.html">About</a></li>
+                                    <li><a href="blog-right-sidebar.html">Blog</a></li>
+                                    <li><a href="portfolio-3col.html">Portfolio</a></li>
+                                    <li><a href="page-contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .下栏 end -->
+        <!-- JavaScript files placed at the end of the document so the pages load faster
+        ================================================== -->
+        <!-- Jquery and Bootstap core js files -->
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- jQuery REVOLUTION Slider  --> 
+        <script type="text/javascript" src="html/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script> 
+        <script type="text/javascript" src="html/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
+
+        <!-- Modernizr javascript -->
+        <script type="text/javascript" src="plugins/modernizr.js"></script>
+
+        <!-- Isotope javascript -->
+        <script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+
+        <!-- Owl carousel javascript -->
+        <script type="text/javascript" src="plugins/owl-carousel/owl.carousel.js"></script>
+
+        <!-- Magnific Popup javascript -->
+        <script type="text/javascript" src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+        <!-- Appear javascript -->
+        <script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+        <!-- Sharrre javascript -->
+        <script type="text/javascript" src="plugins/jquery.sharrre.js"></script>
+
+        <!-- Count To javascript -->
+        <script type="text/javascript" src="plugins/jquery.countTo.js"></script>
+
+        <!-- Parallax javascript -->
+        <script src="plugins/jquery.parallax-1.1.3.js"></script>
+
+        <!-- Contact form -->
+        <script src="plugins/jquery.validate.js"></script>
+
+        <!-- Initialization of Plugins -->
+        <script type="text/javascript" src="js/template.js"></script>
+
+        <!-- Custom Scripts -->
+        <script type="text/javascript" src="js/custom.js"></script>
+
+    </h:body>
+</html>
+

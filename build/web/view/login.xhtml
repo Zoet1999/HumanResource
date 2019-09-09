@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="en"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Login</title>
+
+        <!-- ========== Css Files ========== -->
+        <link href="css/root.css" rel="stylesheet"/>
+        <link href="css/style_1.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <div style="position:absolute;z-index:-1;width:100%;height:100%;">
+            <img src="img/manageloginbg.png" width="100%" height="100%" />
+        </div>
+        <div class="login-form">
+            <h:form>
+                <div class="top">
+                   
+                    <h1>LOGIN</h1>
+                    <h4>User</h4>
+                </div>
+                <div class="form-area" id="form-area">
+
+                    <div class="group" >
+                        <h:inputText id="userName"                                    
+                                     class="form-control"
+                                     title="请输入你的用户名"
+                                     value="#{accountController.selected.name}"
+                                     required="true"
+                                     requiredMessage="用户名必填"
+                                     maxlength="30"
+                                     a:placeholder="Username" 
+                                     >
+
+                        </h:inputText>
+
+                        <i class="fa fa-user"></i>
+                    </div>
+
+                    <div class="group" >                       
+                        <h:inputSecret id="password"
+                                       class="form-control"
+                                       title="请输入你的密码"
+                                       value="#{accountController.selected.pwd}"
+                                       required="true"
+                                       requiredMessage="密码必填"                                   
+                                       maxlength="20"
+                                       a:placeholder="password"
+                                       >
+                        </h:inputSecret>
+
+                        <i class="fa fa-key"></i>
+                    </div>
+                    <div class="checkbox checkbox-primary">
+                        <input id="checkbox101" type="checkbox"/>
+                        <label for="checkbox101"> Remember Me</label>
+                    </div>  
+
+                    <div>                       
+                        <p:growl id="growl" life="2000" />
+                        <h:commandButton  value="登陆" 
+                                          style="margin-right:20px;" 
+                                          styleClass="btn btn-default btn-block" 
+                                          action="#{accountController.isLogin}"
+                                          />  
+
+                    </div>                    
+                </div>
+            </h:form>
+            <div class="footer-links row">
+                <div class="col-xs-6">
+                    <a href="register.xhtml">
+                        <i class="fa fa-external-link"></i> Register Now</a>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <a href="#"><i class="fa fa-lock"></i> Forgot password</a>
+                </div>
+            </div>
+        </div>
+
+    </h:body>
+</html>

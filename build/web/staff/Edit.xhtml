@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditStaffTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditStaffLabel_staffNo}" for="staffNo" />
+                    <h:inputText id="staffNo" value="#{staffController.selected.staffNo}" title="#{bundle.EditStaffTitle_staffNo}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_staffNo}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{staffController.selected.name}" title="#{bundle.EditStaffTitle_name}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_name}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_sex}" for="sex" />
+                    <h:inputText id="sex" value="#{staffController.selected.sex}" title="#{bundle.EditStaffTitle_sex}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_sex}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_age}" for="age" />
+                    <h:inputText id="age" value="#{staffController.selected.age}" title="#{bundle.EditStaffTitle_age}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_age}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_address}" for="address" />
+                    <h:inputText id="address" value="#{staffController.selected.address}" title="#{bundle.EditStaffTitle_address}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_address}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_tel}" for="tel" />
+                    <h:inputText id="tel" value="#{staffController.selected.tel}" title="#{bundle.EditStaffTitle_tel}" />
+                    <h:outputLabel value="#{bundle.EditStaffLabel_mail}" for="mail" />
+                    <h:inputText id="mail" value="#{staffController.selected.mail}" title="#{bundle.EditStaffTitle_mail}" />
+                    <h:outputLabel value="#{bundle.EditStaffLabel_workingYears}" for="workingYears" />
+                    <h:inputText id="workingYears" value="#{staffController.selected.workingYears}" title="#{bundle.EditStaffTitle_workingYears}" />
+                </h:panelGrid>
+                <h:commandLink action="#{staffController.update}" value="#{bundle.EditStaffSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditStaffViewLink}"/>
+                <br />
+                <h:commandLink action="#{staffController.prepareList}" value="#{bundle.EditStaffShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditStaffIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCcollectionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCcollectionLabel_collectNo}" for="collectNo" />
+                    <h:inputText id="collectNo" value="#{ccollectionController.selected.collectNo}" title="#{bundle.CreateCcollectionTitle_collectNo}" required="true" requiredMessage="#{bundle.CreateCcollectionRequiredMessage_collectNo}"/>
+                    <h:outputLabel value="#{bundle.CreateCcollectionLabel_accountNo}" for="accountNo" />
+                    <h:inputText id="accountNo" value="#{ccollectionController.selected.accountNo}" title="#{bundle.CreateCcollectionTitle_accountNo}" required="true" requiredMessage="#{bundle.CreateCcollectionRequiredMessage_accountNo}"/>
+                    <h:outputLabel value="#{bundle.CreateCcollectionLabel_companyNo}" for="companyNo" />
+                    <h:inputText id="companyNo" value="#{ccollectionController.selected.companyNo}" title="#{bundle.CreateCcollectionTitle_companyNo}" required="true" requiredMessage="#{bundle.CreateCcollectionRequiredMessage_companyNo}"/>
+                    <h:outputLabel value="#{bundle.CreateCcollectionLabel_companycompanyNo}" for="companycompanyNo" />
+                    <h:selectOneMenu id="companycompanyNo" value="#{ccollectionController.selected.companycompanyNo}" title="#{bundle.CreateCcollectionTitle_companycompanyNo}" required="true" requiredMessage="#{bundle.CreateCcollectionRequiredMessage_companycompanyNo}">
+                        <f:selectItems value="#{companyController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateCcollectionLabel_accountaccountNo}" for="accountaccountNo" />
+                    <h:selectOneMenu id="accountaccountNo" value="#{ccollectionController.selected.accountaccountNo}" title="#{bundle.CreateCcollectionTitle_accountaccountNo}" required="true" requiredMessage="#{bundle.CreateCcollectionRequiredMessage_accountaccountNo}">
+                        <f:selectItems value="#{accountController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ccollectionController.create}" value="#{bundle.CreateCcollectionSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{ccollectionController.prepareList}" value="#{bundle.CreateCcollectionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCcollectionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditAccountTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditAccountLabel_accountNo}" for="accountNo" />
+                    <h:inputText id="accountNo" value="#{accountController.selected.accountNo}" title="#{bundle.EditAccountTitle_accountNo}" required="true" requiredMessage="#{bundle.EditAccountRequiredMessage_accountNo}"/>
+                    <h:outputLabel value="#{bundle.EditAccountLabel_telNo}" for="telNo" />
+                    <h:inputText id="telNo" value="#{accountController.selected.telNo}" title="#{bundle.EditAccountTitle_telNo}" required="true" requiredMessage="#{bundle.EditAccountRequiredMessage_telNo}"/>
+                    <h:outputLabel value="#{bundle.EditAccountLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{accountController.selected.name}" title="#{bundle.EditAccountTitle_name}" required="true" requiredMessage="#{bundle.EditAccountRequiredMessage_name}"/>
+                    <h:outputLabel value="#{bundle.EditAccountLabel_pwd}" for="pwd" />
+                    <h:inputText id="pwd" value="#{accountController.selected.pwd}" title="#{bundle.EditAccountTitle_pwd}" required="true" requiredMessage="#{bundle.EditAccountRequiredMessage_pwd}"/>
+                    <h:outputLabel value="#{bundle.EditAccountLabel_authority}" for="authority" />
+                    <h:inputText id="authority" value="#{accountController.selected.authority}" title="#{bundle.EditAccountTitle_authority}" required="true" requiredMessage="#{bundle.EditAccountRequiredMessage_authority}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{accountController.update}" value="#{bundle.EditAccountSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditAccountViewLink}"/>
+                <br />
+                <h:commandLink action="#{accountController.prepareList}" value="#{bundle.EditAccountShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditAccountIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

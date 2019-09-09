@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="欢迎！创建新的公告"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateNoticeLabel_noticeNo}" for="noticeNo" />
+                    <h:inputText id="noticeNo" value="#{noticeController.selected.noticeNo}" title="#{CreateNoticeTitle_noticeNo}" required="true" requiredMessage="#{bundle.CreateNoticeRequiredMessage_noticeNo}"/>
+                    <h:outputLabel value="#{bundle.CreateNoticeLabel_title}" for="title" />
+                    <h:inputText id="title" value="#{noticeController.selected.title}" title="#{bundle.CreateNoticeTitle_title}" required="true" requiredMessage="#{bundle.CreateNoticeRequiredMessage_title}"/>
+                    <h:outputLabel value="#{bundle.CreateNoticeLabel_content}" for="content" />
+                    <h:inputText id="content" value="#{noticeController.selected.content}" title="#{bundle.CreateNoticeTitle_content}" required="true" requiredMessage="#{bundle.CreateNoticeRequiredMessage_content}"/>
+                    <h:outputLabel value="#{bundle.CreateNoticeLabel_createDate}" for="createDate" />
+                    <h:inputText id="createDate" value="#{noticeController.selected.createDate}" title="#{bundle.CreateNoticeTitle_createDate}" required="true" requiredMessage="#{bundle.CreateNoticeRequiredMessage_createDate}">
+                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateNoticeLabel_changeDate}" for="changeDate" /> 
+                    <h:inputText id="changeDate" value="#{noticeController.selected.changeDate}" title="#{bundle.CreateNoticeTitle_changeDate}" >
+                    <f:convertDateTime pattern="MM/dd/yyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateNoticeLabel_accountaccountNo}" for="accountaccountNo" />
+                    <h:inputText id="accountaccountNo" value="#{noticeController.selected.accountaccountNo}" title="#{bundle.CreateNoticeTitle_accountaccountNo}" required="true" requiredMessage="#{bundle.CreateNoticeRequiredMessage_accountaccountNo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{noticeController.create}" value="保存" />
+                <br />
+                <br />
+                <h:commandLink action="#{noticeController.prepareList()}" value="查看所有公告数据" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="index" value="本业主页"/>
+                <br />
+                <br />
+                <!--<h:commandLink action="#{noticeController.prepareNotices()}" value="刷新所有公告数据" immediate="true"/>-->
+                <a href="Javascript:window.location='http://localhost:59458/HumanResource/faces/view/homepage.xhtml';" target="_blank">GOBACK创建主页</a>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPositionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPositionLabel_positionNo}" for="positionNo" />
+                    <h:inputText id="positionNo" value="#{positionController.selected.positionNo}" title="#{bundle.EditPositionTitle_positionNo}" required="true" requiredMessage="#{bundle.EditPositionRequiredMessage_positionNo}"/>
+                    <h:outputLabel value="#{bundle.EditPositionLabel_position}" for="position" />
+                    <h:inputText id="position" value="#{positionController.selected.position}" title="#{bundle.EditPositionTitle_position}" required="true" requiredMessage="#{bundle.EditPositionRequiredMessage_position}"/>
+                    <h:outputLabel value="#{bundle.EditPositionLabel_department}" for="department" />
+                    <h:inputText id="department" value="#{positionController.selected.department}" title="#{bundle.EditPositionTitle_department}" required="true" requiredMessage="#{bundle.EditPositionRequiredMessage_department}"/>
+                    <h:outputLabel value="#{bundle.EditPositionLabel_level}" for="level" />
+                    <h:inputText id="level" value="#{positionController.selected.level}" title="#{bundle.EditPositionTitle_level}" required="true" requiredMessage="#{bundle.EditPositionRequiredMessage_level}"/>
+                    <h:outputLabel value="#{bundle.EditPositionLabel_companycompanyNo}" for="companycompanyNo" />
+                    <h:selectOneMenu id="companycompanyNo" value="#{positionController.selected.companycompanyNo}" title="#{bundle.EditPositionTitle_companycompanyNo}" required="true" requiredMessage="#{bundle.EditPositionRequiredMessage_companycompanyNo}">
+                        <f:selectItems value="#{companyController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{positionController.update}" value="#{bundle.EditPositionSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPositionViewLink}"/>
+                <br />
+                <h:commandLink action="#{positionController.prepareList}" value="#{bundle.EditPositionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditPositionIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

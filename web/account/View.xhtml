@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAccountTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAccountLabel_accountNo}"/>
+                    <h:outputText value="#{accountController.selected.accountNo}" title="#{bundle.ViewAccountTitle_accountNo}"/>
+                    <h:outputText value="#{bundle.ViewAccountLabel_telNo}"/>
+                    <h:outputText value="#{accountController.selected.telNo}" title="#{bundle.ViewAccountTitle_telNo}"/>
+                    <h:outputText value="#{bundle.ViewAccountLabel_name}"/>
+                    <h:outputText value="#{accountController.selected.name}" title="#{bundle.ViewAccountTitle_name}"/>
+                    <h:outputText value="#{bundle.ViewAccountLabel_pwd}"/>
+                    <h:outputText value="#{accountController.selected.pwd}" title="#{bundle.ViewAccountTitle_pwd}"/>
+                    <h:outputText value="#{bundle.ViewAccountLabel_authority}"/>
+                    <h:outputText value="#{accountController.selected.authority}" title="#{bundle.ViewAccountTitle_authority}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{accountController.destroyAndView}" value="#{bundle.ViewAccountDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAccountEditLink}"/>
+                <br />
+                <h:commandLink action="#{accountController.prepareCreate}" value="#{bundle.ViewAccountCreateLink}" />
+                <br />
+                <h:commandLink action="#{accountController.prepareList}" value="#{bundle.ViewAccountShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAccountIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

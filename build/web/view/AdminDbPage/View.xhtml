@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="公告板详细"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewNoticeLabel_noticeNo}"/>
+                    <h:outputText value="#{noticeController.selected.noticeNo}" title="#{bundle.ViewNoticeTitle_noticeNo}"/>
+                    <h:outputText value="#{bundle.ViewNoticeLabel_title}"/>
+                    <h:outputText value="#{noticeController.selected.title}" title="#{bundle.ViewNoticeTitle_title}"/>
+                    <h:outputText value="#{bundle.ViewNoticeLabel_content}"/>
+                    <h:outputText value="#{noticeController.selected.content}" title="#{bundle.ViewNoticeTitle_content}"/>
+                    <h:outputText value="#{bundle.ViewNoticeLabel_createDate}"/>
+                    <h:outputText value="#{noticeController.selected.createDate}" title="#{bundle.ViewNoticeTitle_createDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewNoticeLabel_changeDate}"/>
+                    <h:outputText value="#{noticeController.selected.changeDate}" title="#{bundle.ViewNoticeTitle_changeDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewNoticeLabel_accountaccountNo}"/>
+                    <h:outputText value="#{noticeController.selected.accountaccountNo}" title="#{bundle.ViewNoticeTitle_accountaccountNo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{noticeController.destroyAndView}" value="#{bundle.ViewNoticeDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="编辑"/>
+                <br />
+                <br />
+                <h:commandLink action="#{noticeController.prepareCreate}" value="创建" />
+                <br />
+                <br />
+                <h:commandLink action="#{noticeController.prepareList}" value="详细"/>
+                <br />
+                <br />
+                <a href="Javascript:window.location='http://localhost:59458/HumanResource/faces/view/AdminDbPage/index.xhtml';" target="_blank">GOBACK创建主页</a>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

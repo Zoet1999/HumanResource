@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCompanyTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCompanyEmpty}" rendered="#{companyController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{companyController.items.rowCount > 0}">
+                    <h:outputText value="#{companyController.pagination.pageFirstItem + 1}..#{companyController.pagination.pageLastItem + 1}/#{companyController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{companyController.previous}" value="#{bundle.Previous} #{companyController.pagination.pageSize}" rendered="#{companyController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{companyController.next}" value="#{bundle.Next} #{companyController.pagination.pageSize}" rendered="#{companyController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{companyController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCompanyTitle_companyNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.companyNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCompanyTitle_companyName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.companyName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCompanyTitle_address}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.address}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCompanyTitle_remark}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.remark}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{companyController.prepareView}" value="#{bundle.ListCompanyViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{companyController.prepareEdit}" value="#{bundle.ListCompanyEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{companyController.destroy}" value="#{bundle.ListCompanyDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{companyController.prepareCreate}" value="#{bundle.ListCompanyCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCompanyIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

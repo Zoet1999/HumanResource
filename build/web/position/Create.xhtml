@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePositionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePositionLabel_positionNo}" for="positionNo" />
+                    <h:inputText id="positionNo" value="#{positionController.selected.positionNo}" title="#{bundle.CreatePositionTitle_positionNo}" required="true" requiredMessage="#{bundle.CreatePositionRequiredMessage_positionNo}"/>
+                    <h:outputLabel value="#{bundle.CreatePositionLabel_position}" for="position" />
+                    <h:inputText id="position" value="#{positionController.selected.position}" title="#{bundle.CreatePositionTitle_position}" required="true" requiredMessage="#{bundle.CreatePositionRequiredMessage_position}"/>
+                    <h:outputLabel value="#{bundle.CreatePositionLabel_department}" for="department" />
+                    <h:inputText id="department" value="#{positionController.selected.department}" title="#{bundle.CreatePositionTitle_department}" required="true" requiredMessage="#{bundle.CreatePositionRequiredMessage_department}"/>
+                    <h:outputLabel value="#{bundle.CreatePositionLabel_level}" for="level" />
+                    <h:inputText id="level" value="#{positionController.selected.level}" title="#{bundle.CreatePositionTitle_level}" required="true" requiredMessage="#{bundle.CreatePositionRequiredMessage_level}"/>
+                    <h:outputLabel value="#{bundle.CreatePositionLabel_companycompanyNo}" for="companycompanyNo" />
+                    <h:selectOneMenu id="companycompanyNo" value="#{positionController.selected.companycompanyNo}" title="#{bundle.CreatePositionTitle_companycompanyNo}" required="true" requiredMessage="#{bundle.CreatePositionRequiredMessage_companycompanyNo}">
+                        <f:selectItems value="#{companyController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{positionController.create}" value="#{bundle.CreatePositionSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{positionController.prepareList}" value="#{bundle.CreatePositionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePositionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

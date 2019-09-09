@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAccountTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_accountNo}" for="accountNo" />
+                    <h:inputText id="accountNo" value="#{accountController.selected.accountNo}" title="#{bundle.CreateAccountTitle_accountNo}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_accountNo}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_telNo}" for="telNo" />
+                    <h:inputText id="telNo" value="#{accountController.selected.telNo}" title="#{bundle.CreateAccountTitle_telNo}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_telNo}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{accountController.selected.name}" title="#{bundle.CreateAccountTitle_name}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_name}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_pwd}" for="pwd" />
+                    <h:inputText id="pwd" value="#{accountController.selected.pwd}" title="#{bundle.CreateAccountTitle_pwd}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_pwd}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_authority}" for="authority" />
+                    <h:inputText id="authority" value="#{accountController.selected.authority}" title="#{bundle.CreateAccountTitle_authority}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_authority}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{accountController.create}" value="#{bundle.CreateAccountSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{accountController.prepareList}" value="#{bundle.CreateAccountShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAccountIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
